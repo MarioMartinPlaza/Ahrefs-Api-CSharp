@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Authors>Mario Martín Plaza</Authors>
+    <Company>Mario Martín Plaza</Company>
+    <PackageId>Ahrefs-Api-CSharp</PackageId>
+    <Product>AhrefsApiCSharp</Product>
+    <Description>Easy wrapper for Ahrefs API in C#</Description>
+    <Copyright />
+    <RepositoryUrl>https://github.com/MarioMartinPlaza/Ahrefs-Api-CSharp</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MarioMartinPlaza/Ahrefs-Api-CSharp</PackageProjectUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>Ahrefs</PackageTags>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
