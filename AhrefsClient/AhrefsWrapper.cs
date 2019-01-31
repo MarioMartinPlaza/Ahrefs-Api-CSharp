@@ -13,11 +13,11 @@ using System.Web;
 
 namespace AhrefsClient
 {
-    public class AhrefsWrapper
+    public class AhrefsWrapper : IAhrefsWrapper
     {
         private IAhrefsAuthentication _ahrefsAuthentication;
         private AhrefsEndpoints _ahrefsEndPoints;
-        public AhrefsWrapper(IAhrefsAuthentication ahrefsAuthentication, AhrefsEndpoints ahrefsEndPoints)
+        public AhrefsWrapper(IAhrefsAuthentication ahrefsAuthentication, AhrefsEndpoints ahrefsEndPoints = AhrefsEndpoints.ApiV2)
         {
             this._ahrefsAuthentication = ahrefsAuthentication;
             this._ahrefsEndPoints = ahrefsEndPoints;
