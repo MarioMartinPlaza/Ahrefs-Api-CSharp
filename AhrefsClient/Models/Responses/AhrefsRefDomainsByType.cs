@@ -10,7 +10,7 @@
     public partial class AhrefsRefDomainsByType
     {
         [JsonProperty("refdomains", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Refdomain> Refdomains { get; set; }
+        public List<RefdomainByType> Refdomains { get; set; }
 
         [JsonProperty("stats", NullValueHandling = NullValueHandling.Ignore)]
         public RefDomainsByTypeStats Stats { get; set; }

@@ -9,7 +9,7 @@ namespace AhrefsClient
         private string _apiToken;
         public AhrefsAuthentication(string apiToken)
         {
-            _apiToken = "29a69e881487d7c81b5c2ddd3ac95ed6cd5c0f7e";
+            _apiToken = apiToken;
         }
         public string GetToken()
         {
