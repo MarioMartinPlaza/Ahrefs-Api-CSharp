@@ -34,6 +34,17 @@ namespace AhrefsClient
             return DeserializeObject(rawResponse, ahrefsQuery.From);
         }
 
+        public T MakeRequest<T>(AhrefsQuery ahrefsQuery)
+        {
+            ahrefsQuery.SetToken(_ahrefsAuthentication.GetToken());
+            var builder = new UriBuilder(AhrefsDomain.GetDomain(_ahrefsEndPoints));
+            builder.Query = ahrefsQuery.GetQueryString().ToString();
+
+            var rawResponse = SendRequest(builder.ToString());
+            return (T)DeserializeObject(rawResponse, ahrefsQuery.From);
+        }
+
+
         private string SendRequest(string url)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);

@@ -10,12 +10,11 @@ namespace AhrefsClient.Models
 {
     public class AhrefsQuery
     {
-        private string resultQuery;
         private string Token { get; set; }
         public string Select { get; set; }
         public AhrefsFrom From { get; set; }
         public string Target { get; set; }
-        public string Mode { get; set; }
+        public AhrefsModes Mode { get; set; }
         public string Where { get; set; }
         public string Having { get; set; }
         public string Order_by { get; set; }
@@ -25,18 +24,17 @@ namespace AhrefsClient.Models
         public NameValueCollection GetQueryString()
         {
 
-            var queryString = HttpUtility.ParseQueryString("data");            
+            var queryString = HttpUtility.ParseQueryString("data");
             if (!string.IsNullOrEmpty(Select))
                 queryString.Add("select", Select);
             else
                 queryString.Add("select", "*");
 
-            if (From != null)
-                queryString.Add("from", From.ToString());
+            queryString.Add("from", From.ToString());
             if (!string.IsNullOrEmpty(Target))
                 queryString.Add("target", Target);
-            if (!string.IsNullOrEmpty(Mode))
-                queryString.Add("mode", Mode);
+
+            queryString.Add("mode", Mode.ToString());
             if (!string.IsNullOrEmpty(Where))
                 queryString.Add("where", Where);
             if (!string.IsNullOrEmpty(Having))
